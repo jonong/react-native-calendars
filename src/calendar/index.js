@@ -160,7 +160,7 @@ class Calendar extends Component {
     const maxDate = parseDate(this.props.maxDate);
     let state = '';
 
-    if (this.props.enabledDates.length > 0) {
+    if (this.props.enabledDates && Object.keys(this.props.enabledDates).length > 0) {
       const date = enabledDates[day.toString('yyyy-MM-dd')];
       if (date == null) {
         state = 'disabled';
