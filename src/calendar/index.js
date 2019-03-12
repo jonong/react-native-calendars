@@ -75,7 +75,9 @@ class Calendar extends Component {
     // Handler which gets executed when press arrow icon left. It receive a callback can go back month
     onPressArrowLeft: PropTypes.func,
     // Handler which gets executed when press arrow icon left. It receive a callback can go next month
-    onPressArrowRight: PropTypes.func
+    onPressArrowRight: PropTypes.func,
+    // enabled dates for selection
+    enabledDates: PropTypes.any,
   };
 
   constructor(props) {
@@ -157,7 +159,13 @@ class Calendar extends Component {
     const minDate = parseDate(this.props.minDate);
     const maxDate = parseDate(this.props.maxDate);
     let state = '';
-    if (this.props.disabledByDefault) {
+
+    if (this.props.enabledDates.length > 0) {
+      const date = enabledDates[day.toString('yyyy-MM-dd')];
+      if (date == null) {
+        state = 'disabled';
+      }
+    } else if (this.props.disabledByDefault) {
       state = 'disabled';
     } else if ((minDate && !dateutils.isGTE(day, minDate)) || (maxDate && !dateutils.isLTE(day, maxDate))) {
       state = 'disabled';
