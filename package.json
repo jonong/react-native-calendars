@@ -1,5 +1,5 @@
 {
-  "name": "react-native-calendars",
+  "name": "react-native-calendars-jonong",
   "version": "1.22.0",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wix/react-native-calendars"
+    "url": "git+https://github.com/jonong/react-native-calendars"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
